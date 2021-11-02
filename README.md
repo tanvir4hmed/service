@@ -75,7 +75,6 @@ ssh -i my_server.pem ubuntu@serverip
 sudo apt update
 sudo apt  install docker.io
 ```
-**Step**
 
 **Create Three folders for three projects** where one is our Nginx Load Balancer name &quot;lb&quot; and the other two is service1 and service2. We can create service1 and service2 when cloning the project service from git.
  For example,
