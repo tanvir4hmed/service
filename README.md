@@ -89,7 +89,7 @@ git clone https://github.com/tanvir4hmed/service.git service2
 mkdir lb
 ```
 Output will look like
- ![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_1.png)
+![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_1.png)
 
 Now go to the service1 folder and modify the app.py by replacing the word &#39;Service&#39; with &#39;Service 1&#39; in return so we can recognize the service1 project.
 
@@ -99,7 +99,7 @@ then go to the service2 folder and modify the app.py by replacing the word &#39;
 Build Docker image for service2 and run the image
 
 App.py changed output:
- ![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_2.png)
+![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_2.png)
 
 
 To do so execute these commands:
@@ -117,20 +117,20 @@ sudo docker run -d -p 8000:5000 service1
 sudo docker run -d -p 8001:5000 service2
 ```
 Docker run output will look like:
- ![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_3.png)
+![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_3.png)
 
 
 **Step 3: Deploy NGINX Load Balancer with Docker in server**
 To do that we need to know the ip of service1 and service2.
 Lets inspect our docker container and note the ip from the bottom of the output.
- ![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_4.png)
+![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_4.png)
 Do the same for the service2 container inspecting the container id from the output of docker ps.
 Write it down for using it in nginx.conf. For example,
 Service1 ip 172.17.0.2 which is a private ip of the container
 Service2 ip 172.17.0.3 which is a private ip of the container
 
 Now go to the folder lb and create two files, one is Dockerfile and other is nginx.conf
- ![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_5.png)
+![](https://github.com/tanvir4hmed/service/blob/main/readme_images/image_5.png)
  In Dockerfile write these
 ```sh
 FROM nginx
