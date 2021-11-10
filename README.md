@@ -155,8 +155,8 @@ events {
 
 http {
  upstream app {
-   server 172.17.0.2:8000;
-   server 172.17.0.3.:8001;
+   server 172.17.0.2:5000;
+   server 172.17.0.3.:5000;
 }
  server{
    listen 80;
@@ -171,7 +171,7 @@ http {
 Now build image and run the container of lb
 ```sh
 sudo docker build -t lb .
-sudo docker run -d -p 80:80
+sudo docker run -d -p 80:80 lb
 ```
 **Step 4: Checking the traffic flow from inside of lb container using tcpdump**
 To do that we need container id of lb to go inside the lb container by using docker exec and then install some tools in that lb container
